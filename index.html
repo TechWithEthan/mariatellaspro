@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reports Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .clock {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>📊 Website Reports Dashboard</h1>
+            <p>Track visitor analytics with live data.</p>
+            <div class="clock">
+                ⏰ Current Time: <span id="clock">00:00:00</span>
+            </div>
+        </div>
+        
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>👤 Total Visitors</h3>
+                    <h2 id="totalVisitors">0</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>⏳ Avg. Time Spent</h3>
+                    <h2 id="avgTime">0s</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>📌 Pages Visited</h3>
+                    <h2 id="pagesVisited">0</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchVisitorData() {
+            try {
+                // Fetch the user's IP Address
+                let ipResponse = await fetch('https://api.ipify.org?format=json');
+                let ipData = await ipResponse.json();
+                let visitorIP = ipData.ip;
+    
+                // Retrieve stored visit data
+                let visitCount = localStorage.getItem('visitCount') || 0;
+                visitCount++;
+                localStorage.setItem('visitCount', visitCount);
+    
+                // Store IP address in local storage (for demo purposes)
+                let visitorLog = JSON.parse(localStorage.getItem('visitorLog')) || [];
+                visitorLog.push({ ip: visitorIP, time: new Date().toLocaleString() });
+                localStorage.setItem('visitorLog', JSON.stringify(visitorLog));
+    
+                // Update Dashboard
+                document.getElementById('visitCount').innerText = visitCount;
+                document.getElementById('visitorIP').innerText = visitorIP;
+            } catch (error) {
+                console.error('Error fetching visitor data:', error);
+            }
+        }
+    
+        function displayVisitorLog() {
+            let visitorLog = JSON.parse(localStorage.getItem('visitorLog')) || [];
+            let logContainer = document.getElementById('visitorLog');
+            logContainer.innerHTML = visitorLog.map(log => `<li>${log.ip} - ${log.time}</li>`).join('');
+        }
+    
+        setInterval(() => {
+            let now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }, 1000);
+    
+        fetchVisitorData();
+        displayVisitorLog();
+    </script>
+    
+    <!-- Add this in your HTML -->
+    <div class="row text-center mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <h3>🌍 Visitor IP</h3>
+                <h2 id="visitorIP">Fetching...</h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <h3>📜 Visitor Log</h3>
+                <ul id="visitorLog"></ul>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
