@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria Tellas Pro</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+
+    <link
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <style>
+    .nav_link{
+      color: #07e7b7;
+    }
+    .nav_link.scrolled {
+            color: black; /* Color after scrolling */
+        }
+      
+  </style>
+
+  <body>
+    <section class="first">
+    <!-- Header Section -->
+    <header class="header" >
+      <nav class="nav bd_grid">
+        <div>
+          <a href="#" class="nav_logo"><img src="assets/images/logo.png" style="height: 140px;"></a>
+        </div>
+
+        <div class="nav_menu" id="nav_menu">
+          <ul class="nav_list">
+            <li class="nav_items">
+              <a href="#home" class="nav_link active">Home</a>
+            </li>
+            <li class="nav_items">
+              <a href="#about" class="nav_link active">About</a>
+            </li>
+            <li class="nav_items">
+              <a href="#skills" class="nav_link active">Skills</a>
+            </li>
+            <li class="nav_items">
+              <a href="#clients" class="nav_link active">Clients</a>
+            </li>
+            <li class="nav_items">
+              <a href="#work" class="nav_link active">Work</a>
+            </li>
+            <li class="nav_items">
+              <a href="contact.html" class="nav_link active">Contact</a>
+            </li>
+            <li class="nav_items">
+              <a href="Login.html" class="nav_link active">Login</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav_toggle" id="nav_toggle">
+          <i class="bx bx-menu-alt-right"></i>
+        </div>
+      </nav>
+    </header>
+    <script>
+      window.addEventListener('scroll', function() {
+          const navLinks = document.querySelectorAll('.nav_link');
+          const header = document.querySelector('.header');
+          const navtoggle=document.querySelector('.nav_toggle');
+          
+          if (window.scrollY > 0) {
+              navLinks.forEach(link => {
+                  link.classList.add('scrolled');
+              });
+              header.style.backgroundColor = 'white';
+              navtoggle.style.color = 'black';
+          } else {
+              navLinks.forEach(link => {
+                  link.classList.remove('scrolled');
+              });
+              header.style.backgroundColor = ''; // Reset to original color or use initial value
+              navtoggle.style.color = '';
+          }
+      });
+  </script>
+  
+    <main class="main" >
+      <!-- HOME SECTION -->
+      <section class="home bd_grid" id="home">
+        <div class="home_data" data-aos="fade-down">
+          <h3 class="home_title">
+            Hi, <br />I'm <span class="home_title-color">Maria Tellas</span
+            ><br />Full Stack Web Developer
+            <br>Django | Python
+          </h3>
+          <a href="contact.html" class="button"> Contact</a>
+        </div>
+
+        <div class="home_social">
+          <a href="#" class="home_social-icon" data-aos="fade-down"
+            ><i class="bx bxl-facebook-circle"></i
+          ></a>
+          <a
+            href="#"
+            class="home_social-icon"
+            data-aos="fade-down"
+            data-aos-delay="250"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          <a
+            href="#"
+            class="home_social-icon"
+            data-aos="fade-down"
+            data-aos-delay="300"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a
+            href="#"
+            class="home_social-icon"
+            data-aos="fade-down"
+            data-aos-delay="350"
+            ><i class="bx bxl-github"></i
+          ></a>
+        </div>
+
+        <div class="home_img" data-aos="fade-down" data-aos-delay="500" >
+          <img src="assets/images/IMG_20240606_173307MAGICCUTOUT-removebg-preview.png">
+        
+        </div>
+      </section>
+    </section>
+
+      <!-- ABOUT SECTION -->
+      <section class="about section" id="about" >
+        <h2 class="section-title" data-aos="fade-down">About</h2>
+
+        <div class="about_container bd_grid">
+          <div class="about_img" data-aos="fade-down" data-aos-delay="50">
+            <img src="assets/images/about.webp">
+          </div>
+
+          <div>
+            <h2
+              class="about_subtitle"
+              data-aos="fade-down"
+              data-aos-delay="350"
+            >
+              I'm Mr. Maria Tellas
+            </h2>
+            <p class="about_text" data-aos="fade-down" data-aos-delay="450">
+              I am a dedicated and enthusiastic individual with a passion for leveraging technology to drive positive change. With a keen eye for detail and a penchant for problem-solving, I thrive in dynamic environments where I can apply my skills in web development and digital innovation. From crafting engaging user experiences to streamlining processes, I am committed to delivering high-quality solutions that exceed expectations. With a strong foundation in computer science and a proactive approach to learning, I am poised to tackle challenges head-on and contribute meaningfully to any team or project.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="skills section" id="skills" >
+
+      <div class="container">
+
+        <h2 class="section-title"data-aos="fade-left" data-aos-delay="50">My Skills</h1>
+    
+        <div class="box-container" data-aos="fade-right" data-aos-delay="450">
+    
+            <div class="bo">
+                <img src="assets/images/icon-1.png" alt="">
+                <h3>HTML 5</h3>
+               
+            </div>
+    
+            <div class="bo">
+                <img src="assets/images/icon-2.png" alt="">
+                <h3>CSS 3</h3>
+              
+            </div>
+    
+            <div class="bo">
+                <img src="assets/images/icon-3.png" alt="">
+                <h3>JavaScript</h3>
+               
+            </div>
+    
+            <div class="bo">
+                <img src="assets/images/Bootstrap.png" alt="">
+                <h3>Bootstrap 5</h3>
+               
+            </div>
+    
+            <div class="bo">
+                <img src="assets/images/Python.png" alt="">
+                <h3>Python</h3>
+               
+            </div>
+    
+            <div class="bo">
+                <img src="assets/images/django.png" alt="">
+                <h3>Django</h3>
+               
+            </div>
+            <div class="bo">
+              <img src="assets/images/java.png" alt="">
+              <h3>Java</h3>
+             
+          </div>
+          <div class="bo">
+            <img src="assets/images/mysql.png" alt="">
+            <h3>MySQL</h3>
+           
+        </div>
+        <div class="bo">
+          <img src="assets/images/wordpress.png" alt="">
+          <h3>wordpress</h3>
+         
+      </div>
+      <div class="bo">
+        <img src="assets/images/icon-6.png" alt="#">
+        <h3>React Js</h3>
+       
+    </div>
+    
+        </div>
+    
+    </div>
+  </section>
+<!--My Clients-->
+<style>
+
+.container1{
+  /*background:linear-gradient(45deg, blueviolet, lightgreen);*/
+  padding:15px 19%;
+  padding-bottom: 100px;
+}
+  .container1 .box-container1{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap:15px;
+  
+}
+.container1 .box-container1 .box{
+ /* box-shadow: 0 5px 10px rgba(0,0,0,.2);*/
+  border-radius: 5px;
+  background:transparent;
+  text-align: center;
+  padding:30px 20px;
+}
+</style>
+<section class="Clients section" id="clients" style="background-color: #d5a1531a;">  
+<div class="container1">
+
+  <h2 class="section-title" data-aos="fade-left" data-aos-delay="50">My Clients</h2>
+
+  <div class="box-container1" data-aos="fade-right" data-aos-delay="450">
+
+      <div class="box">
+        <a href="https://coe.aactni.edu.in"> <img src="assets/images/aac-logo.png" alt="" style="height: 300px;"></a>
+         
+         
+      </div>
+      <div class="box">
+       <a href="https://stripesacademy.net"><img src="assets/images/StripesLogo.svg" alt="" style="height: 300px;"></a>
+       
+       
+    </div>
+    <div class="box">
+     <a href="https://tellas003.github.io/inlooks/"><img src="assets/images/inlooks.jpg" alt="" style="height: 300px; border-radius: 100%;"></a>
+      
+     
+  </div>
+
+
+      </div></div></section>
+
+
+      <!--My projects-->
+
+
+</style>
+
+      <div class="containerr">
+	
+        
+          
+          <!--   *******  Education Section Starts  *******   -->
+      
+          <section class="col" data-aos="fade-down"  data-aos-delay="50">
+            
+            <header class="title">
+              <h2 class="section-title" data-aos="fade-left"  data-aos-delay="50">projects</h2>
+
+             
+            </header>
+      
+            <div class="contents" >
+              
+              <div class="box" data-aos="fade-right"  data-aos-delay="450">
+              
+                <h3>Controller of examination website</h3>
+                <p>For my inaugural project, I crafted a static webpage dedicated to Arulanandar College, Madurai, fulfilling the requirements set forth by the Controller of Examinations (COE). This webpage, accessible at coe.aactni.edu.in, serves as a vital hub for disseminating examination-related information to students and faculty members. Through meticulous design and implementation, I ensured seamless navigation and accessibility, empowering stakeholders with essential resources and updates crucial for academic success.</p>
+                <br><p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+                <p><strong>Project Link:</strong> <a href="https://coe.aactni.edu.in">View Project</a></p>
+              </div>
+      
+              <div class="box" data-aos="fade-left"  data-aos-delay="450">
+               
+                <h3>Stripes Academy website</h3>
+                <p>As part of my internship with the company, I spearheaded the development of the new website for Stripes Academy Mumbai, accessible at stripesacademy.net. The website serves as a centralized platform for certificate authentication, student data management, course details, scheduling, and other educational-related functions. My role involved conceptualizing, designing, and implementing key features to enhance user experience and streamline administrative processes.</p>
+                <br><p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, Bootstrap, Django, Python, MySQL</p>
+                <p><strong>Project Link:</strong> <a href="https://stripesacademy.net">View Project</a></p>
+              </div>
+      
+              <div class="box" data-aos="fade-right"  data-aos-delay="450">
+                <h3>Inlooks saloon</h3>
+                <p>Currently developing a modern and user-friendly website for Inlooks Saloon Mumbai, aimed at enhancing online visibility, improving customer engagement, and streamlining appointment bookings.</p>
+               <br> <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Project Link:</strong> <a href="https://tellas003.github.io/inlooks/">View Project</a></p>
+              </div>
+
+              <div class="box" data-aos="fade-left"  data-aos-delay="450">
+                <h3>Portfolio website</h3>
+                <p>I have successfully completed my personal portfolio website, showcasing my skills, projects, and professional achievements.</p>
+               <br> <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Project Link:</strong> <a href="#">View Project</a></p>
+              </div>
+      
+            </div></section></div>
+      
+          <!--   *******  Education Section Ends  *******   -->
+      
+      <!---
+        </main>
+      <style>
+         .projects {
+            margin: 20px 0;
+        }
+        .project {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+           
+            border-radius: 5px;
+        }
+        .project h2 {
+            margin-top: 0;
+        }
+        .project p {
+            margin: 10px 0 0 0;
+        }
+      </style>
+
+      <div class="container">
+        <section class="projects">
+          <h2 class="section-title" data-aos="fade-left"  data-aos-delay="50">projects</h2>
+
+            <div class="project" data-aos="fade-right"  data-aos-delay="450">
+                <h2>Controller of examination website</h2>
+                <p><strong>Description:</strong> For my inaugural project, I crafted a static webpage dedicated to Arulanandar College, Madurai, fulfilling the requirements set forth by the Controller of Examinations (COE). This webpage, accessible at coe.aactni.edu.in, serves as a vital hub for disseminating examination-related information to students and faculty members. Through meticulous design and implementation, I ensured seamless navigation and accessibility, empowering stakeholders with essential resources and updates crucial for academic success.</p>
+                <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+                <p><strong>Project Link:</strong> <a href="https://coe.aactni.edu.in">View Project</a></p>
+            </div>
+            <div class="project" data-aos="fade-left"  data-aos-delay="450">
+                <h2>Stripes Academy website</h2>
+                <p><strong>Description:</strong>As part of my internship with the company, I spearheaded the development of the new website for Stripes Academy Mumbai, accessible at stripesacademy.net. The website serves as a centralized platform for certificate authentication, student data management, course details, scheduling, and other educational-related functions. My role involved conceptualizing, designing, and implementing key features to enhance user experience and streamline administrative processes.</p>
+                <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, Bootstrap, Django, Python, MySQL</p>
+                <p><strong>Project Link:</strong> <a href="https://stripesacademy.net">View Project</a></p>
+            </div>
+            <div class="project" data-aos="fade-right"  data-aos-delay="450">
+                <h2>Inlooks saloon</h2>
+                <p><strong>Description:</strong> Currently developing a modern and user-friendly website for Inlooks Saloon Mumbai, aimed at enhancing online visibility, improving customer engagement, and streamlining appointment bookings.</p>
+                <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Project Link:</strong> <a href="https://tellas003.github.io/inlooks/">View Project</a></p>
+            </div>
+            <div class="project" data-aos="fade-left"  data-aos-delay="450">
+                <h2>Portfolio website</h2>
+                <p><strong>Description:</strong>"I have successfully completed my personal portfolio website, showcasing my skills, projects, and professional achievements."</p>
+                <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Project Link:</strong> <a href="#">View Project</a></p>
+            </div>
+        </section>
+    </div>-->
+
+    <!--Work experience-->
+    <style>
+      .containe {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        overflow: hidden;
+    }
+   
+    .work-experience {
+        margin: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .experience {
+        background: #fff;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        flex: 0 0 32%; /* Adjust this percentage to fit the desired number of items per row */
+        box-sizing: border-box;
+    }
+    .experience h2 {
+        margin-top: 0;
+        color: #444;
+    }
+    .experience p {
+        margin: 10px 0 0 0;
+    }
+    @media (max-width: 768px) {
+        .experience {
+            flex: 0 0 100%; /* Stacks the items vertically on smaller screens */
+            padding: 15px;
+        }
+        header h1 {
+            font-size: 2em;
+        }
+    }
+  </style>
+  <section class="work section" id="work" style="background-color: #d5a1531a;">
+    <h2 class="section-title" data-aos="fade-right"  data-aos-delay="450">Work experience</h2>
+  <div class="containe" >
+    <section class="work-experience" data-aos="fade-left" data-aos-delay="450">
+        <div class="experience">
+            <h3>System Network Administrator and Trainee</h3>
+            <p> ARUL ANANDAR COLLEGE · Part-time</p>
+            <p><strong>Duration:</strong> Jan 2023 - Nov 2023 </p>
+          
+            <p><strong>Location:</strong> Madurai, Tamil Nadu, India</p>
+        </div>
+        <div class="experience">
+            <h3>Web development and IT support Intern </h3>
+            <p>Stripes Academy · Internship</p>
+            <p><strong>Duration:</strong> Dec 2023 - Apr 2024</p>
+            <p><strong>Location:</strong> Mumbai, Maharashtra, India</p>
+        </div>
+        <div class="experience">
+            <h2>Freelancer</h2>
+            
+            <p><strong>Duration:</strong> May 2024 Present </p>
+            <p><strong>Location:</strong> Mumbai, Maharashtra, India</p>
+        </div>
+    </section>
+  </div>
+  </section>
+
+     <!--   *******  Education Section Starts  *******  -->
+     <style>
+   
+     </style>
+<h2 class="section-title" data-aos="fade-left" data-aos-delay="50">Education</h2> 
+<div class="containerr">
+  <main class="row">
+    <section class="col" data-aos="fade-left" data-aos-delay="100">
+      <header class="title">
+        <h2>School</h2>
+      </header>
+      <div class="contents">
+        <div class="box" data-aos="flip-left">
+          <h4>2015 - 2016</h4>
+          <h3>High School</h3>
+          <p>De Britto Higher Secondary School, Devakottai</p>
+        </div>
+
+        <div class="box" data-aos="flip-right">
+          <h4>2017 - 2018</h4>
+          <h3>Higher Secondary</h3>
+          <p>Sacred Heart Higher Secondary School, Thiruvarangam</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="col" data-aos="fade-right" data-aos-delay="100">
+      <header class="title">
+        <h2>College</h2>
+      </header>
+
+      <div class="contents">
+        <div class="box" data-aos="flip-left">
+          <h4>2018 - 2021</h4>
+          <h3>B.Sc (computer science)</h3>
+          <p>St.Joseph's College, Trichy</p>
+          <p>74 %</p>
+        </div>
+
+        <div class="box" data-aos="flip-right">
+          <h4>2022 - 2024</h4>
+          <h3>MCA (Master of Computer Application)</h3>
+          <p>Arulanandar College, Madurai</p>
+          <p>86 %</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+    <!--   *******  Experience Section Ends   *******  -->
+
+      <!-- CONTACT SECTION -->
+
+    <!---- <section class="contact section" id="contact">
+        <h2 class="section-title" data-aos="fade-down">Contact</h2>
+
+        <div class="contact_container bd_grid">
+          <form action="#" class="contact_form">
+            <input
+              type="text"
+              placeholder="Name"
+              class="control_input"
+              data-aos="fade-right"
+              data-aos-delay="250"
+            />
+            <input
+              type="mail"
+              placeholder="Email"
+              class="control_input"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            />
+            <textarea
+              name=""
+              id=""
+              cols="0"
+              rows="10"
+              class="control_input"
+              data-aos="fade-right"
+              data-aos-delay="400"
+            ></textarea>
+
+            <input
+              type="button"
+              value="Send"
+              class="control_button button"
+              data-aos="fade-right"
+              data-aos-delay="450"
+            />
+          </form>
+        </div>
+      </section>-->
+
+      <!-- Footer Section -->
+     <!--- <footer class="footer">
+        <p class="footer_title" data-aos="fade-down">Maria Tellas</p>
+
+        <div class="footer_socials">
+          <a
+            href="#"
+            class="footer_icon"
+            data-aos="fade-down"
+            data-aos-delay="250"
+            ><i class="bx bxl-facebook-circle"></i
+          ></a>
+          <a
+            href="#"
+            class="footer_icon"
+            data-aos="fade-down"
+            data-aos-delay="350"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          <a
+            href="#"
+            class="footer_icon"
+            data-aos="fade-down"
+            data-aos-delay="450"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a
+            href="#"
+            class="footer_icon"
+            data-aos="fade-down"
+            data-aos-delay="550"
+            ><i class="bx bxl-github"></i
+          ></a>
+        </div>
+
+        <p data-aos="fade-down" data-aos-delay="650">
+          &#169; 2021 copyright all right reserved
+        </p>
+      </footer>
+    </main>-->
+
+    <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer_container">
+    <div class="footer_content">
+      <p>&copy; 2025 Maria Tellas Pro . All rights reserved.</p>
+      <ul class="footer_links">
+        <li><a href="Privacy Policy.html">Privacy Policy</a></li>
+        <li><a href="Terms of Service.html">Terms of Service</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1200,
+        once: false,
+      });
+    </script>
+  </body>
+</html>

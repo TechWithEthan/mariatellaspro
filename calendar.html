@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Classes Calendar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .calendar-container {
+            flex: 1;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .calendar-table th, .calendar-table td {
+            text-align: center;
+            padding: 15px;
+        }
+        .calendar-table tbody tr:hover {
+            background-color: #e9ecef;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .calendar-container {
+                padding: 10px;
+            }
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+    <script>
+        function updateDate() {
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("current-date").innerText = today.toLocaleDateString(undefined, options);
+        }
+    </script>
+</head>
+<body onload="updateDate()">
+    <div class="container calendar-container">
+        <h2 class="text-center mb-4">Mr. Maria Tellas Classes Calendar</h2>
+        <p class="text-center"><strong>Today's Date: <span id="current-date"></span></strong></p>
+        <table class="table calendar-table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Class Name</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>March 28, 2025</td>
+                    <td>Responsive Web Design</td>
+                    <td>1:00 PM - 2:30 PM</td>
+                </tr>
+                <tr>
+                    <td>March 29, 2025</td>
+                    <td>CSS Animations & Transitions</td>
+                    <td>10:00 AM - 11:30 AM</td>
+                </tr>
+                <tr>
+                    <td>March 30, 2025</td>
+                    <td>UI/UX Design Principles</td>
+                    <td>2:00 PM - 3:30 PM</td>
+                </tr>
+                <tr>
+                    <td>March 25, 2025</td>
+                    <td>Introduction to Web Design</td>
+                    <td>9:30 AM - 11:00 AM</td>
+                </tr>
+                <tr>
+                    <td>March 26, 2025</td>
+                    <td>Advanced CSS Techniques</td>
+                    <td>2:00 PM - 3:30 PM</td>
+                </tr>
+                <tr>
+                    <td>March 24, 2025</td>
+                    <td>Building Layouts with Flexbox & Grid</td>
+                    <td>10:00 AM - 11:30 AM</td>
+                </tr>
+                <tr>
+                    <td>March 23, 2025</td>
+                    <td>Web Design Best Practices</td>
+                    <td>1:30 PM - 3:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>2025 | Web Design Academy | All Rights Reserved.</footer>
+</body>
+</html>

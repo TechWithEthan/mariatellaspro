@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Tellas Pro - Settings</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #e6e9f0;
+            font-family: Arial, sans-serif;
+        }
+        .container-wrapper {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+            background-color: #1a1b41;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar h4 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .sidebar ul li:hover {
+            background-color: #343a6e;
+            border-radius: 5px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            margin: auto;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .profile-banner {
+            background: linear-gradient(45deg, #6366f1, #4f46e5);
+            height: 100px;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+        }
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid white;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .save-btn {
+            transition: 0.3s;
+        }
+        .save-btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-warning {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div>
+                <h4>Maria Tellas Pro</h4>
+                <ul>
+                    <li><i class="fas fa-user"></i> <a href="profile.html">My Profile</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="email.html">Email Account</a></li>
+                    <li><i class="fas fa-lock"></i> <a href="security.html">Security</a></li>
+                    <li><i class="fas fa-bell"></i> <a href="notifications.html">Notifications</a></li>
+                    <li><i class="fas fa-calendar"></i> <a href="calendar.html">Calendar</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-warning w-100">Subscribe</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="profile-banner"></div>
+            <img src="https://via.placeholder.com/80" alt="Profile Picture" class="profile-pic">
+            <h3 class="text-center mt-4">My Profile</h3>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="Maria">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Tellas">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" placeholder="mariatellas">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" placeholder="maria@example.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Preferred Timezone</label>
+                    <input type="text" class="form-control" id="timezone" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bio</label>
+                    <textarea class="form-control" rows="3" placeholder="Write something about yourself..."></textarea>
+                </div>
+                <button type="button" class="btn btn-light">Cancel</button>
+                <button type="submit" class="btn btn-primary save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function updateTimeZone() {
+            const timezoneField = document.getElementById("timezone");
+            const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            timezoneField.value = userTimezone;
+        }
+        window.onload = updateTimeZone;
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Control Room</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #1e1e1e;
+            padding: 15px;
+            position: fixed;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            color: white;
+            border: none;
+        }
+        .chart-container {
+            width: 100%;
+            height: 300px;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Security Control</h2>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-white" href="#">Surveillance</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="Access Logs.html">Access Logs</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="Noticeboard.html">Noticeboard</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="System Status.html">System Status</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Work Hours: 9 AM - 4 PM</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4>Live Camera Feed</h4>
+                    <iframe src="rtsp://username:password@camera-ip:554/stream1" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4>Recent Alerts</h4>
+                    <ul>
+                        <li>Unauthorized access detected</li>
+                        <li>Camera 3 offline</li>
+                        <li>Motion detected in Zone A</li>
+                        <li>Fire alarm triggered in Sector B</li>
+                        <li>Security breach at Main Gate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4>Security Logs</h4>
+                    <canvas id="securityChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h4>System Status</h4>
+                    <ul>
+                        <li>Server: <span class="text-success">Online</span></li>
+                        <li>Camera Network: <span class="text-warning">Partial Outage</span></li>
+                        <li>Alarm System: <span class="text-danger">Triggered</span></li>
+                        <li>Door Lock Status: <span class="text-success">Secured</span></li>
+                        <li>Work Hours: 9 AM - 4 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var ctx = document.getElementById('securityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['12 AM', '3 AM', '6 AM', '9 AM', '12 PM', '3 PM', '6 PM', '9 PM'],
+                datasets: [{
+                    label: 'Security Incidents',
+                    data: [2, 4, 1, 3, 5, 2, 6, 4],
+                    backgroundColor: 'red'
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

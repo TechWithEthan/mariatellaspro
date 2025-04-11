@@ -1,0 +1,37 @@
+body {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.signup-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.form-control:focus {
+    border-color: #6610f2;
+    box-shadow: 0 0 5px rgba(102, 16, 242, 0.5);
+}
+.btn-primary {
+    background-color: #6610f2;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #520dc2;
+}
+.toggle-password {
+    cursor: pointer;
+}

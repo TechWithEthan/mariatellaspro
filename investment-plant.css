@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f8fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Container for the entire section */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Section header */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 40px;
+    color: #2c3e50;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: #7f8c8d;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Card Styles */
+.plan-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.plan-card:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+}
+
+/* Card Body */
+.plan-card-body {
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card Titles */
+.card-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+/* Card Text */
+.card-text {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Card Price */
+.card-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #27ae60;
+    margin-bottom: 25px;
+}
+
+/* Plan Button */
+.plan-button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+.plan-button:hover {
+    background-color: #3498db;
+    transform: translateY(-3px);
+}
+
+/* Hover Button Focus */
+.plan-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .plan-card-body {
+        padding: 30px;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+
+    .card-price {
+        font-size: 22px;
+    }
+
+    .plan-button {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-price {
+        font-size: 20px;
+    }
+
+    .plan-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-header h2 {
+        font-size: 24px;
+    }
+
+    .section-header p {
+        font-size: 14px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-price {
+        font-size: 18px;
+    }
+
+    .plan-button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
